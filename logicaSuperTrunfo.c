@@ -117,20 +117,51 @@ int main () {
     printf("A população da cidade é: %i \n A área desta cidade em quilômetros é: %.2fkm² \n", popul2, areakm2);
     printf("O PIB desta cidade é: %.2f Bilhões de reais. \n A quantidade de pontos turísticos nesta cidade é: %i \n", pib2, ponto_tur2);
     printf("A densidade populacional da cidade é: %.2f hab/km². \n O PIB per Capita da cidade é: %.2f reais. \n", denspop2, pibcpt2);   
-    
+  
+    int menu;
+    printf("Escolha um atributo a seguir para a comparação de cartas.");
+    printf("1 - Comparar população.\n ");
+    printf("2 - Comparar área. \n");
+    printf("3 - Comparar PIB. \n");
+    printf("4 - Comparar quantidade de pontos turísticos.\n");
+    printf("5 - Comparar densidade populacional.\n");
+    printf("6 - Comparar PIB per capita.\n");
+    printf("7 - Sair do programa.\n");
+    scanf("%i\n", &menu);
+
+    switch (menu) {
+        case 1:
+        compara_valor(popul1, popul2);
+        break;
+
+        case 2:
+        compara_valor(areakm1, areakm2);
+        break;
+
+        case 3:
+        compara_valor(pib1, pib2);
+        break;
+
+        case 4:
+        compara_valor(ponto_tur1, ponto_tur2);
+        break;
+
+        case 5:
+        compara_denspop(denspop1, denspop2);
+        break;
+
+        case 6:
+        compara_valor(pibcpt1, pibcpt2);
+        break;
+
+        case 7:
+        return 0;
+        break;
+
+        default:
+        printf("Opção inválida, tente novamente.\n");
+    }
 
 
-// O bloco a seguir é responsável por printar na tela o resultado das comparações chamando a função compara_valor.
 
-    printf("Exibindo a partir de agora a comparação entre as cartas! \n");
-    printf("População: "); compara_valor(popul1,popul2);
-    printf("Área: "); compara_valor(areakm1, areakm2);
-    printf("PIB: "); compara_valor(pib1, pib2);
-    printf("Pontos turisticos: "); compara_valor(ponto_tur1, ponto_tur2);
-    printf("Densidade Populacional: "); compara_denspop(denspop1, denspop2);
-    printf("PIB per Capita: "); compara_valor(pibcpt1, pibcpt2);
-
-
-
-    return 0;
 }
