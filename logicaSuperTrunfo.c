@@ -22,7 +22,7 @@ void compara_denspop(double a, double b) {
 
     
 int main () {
-    printf("Trabalho de Super Trunfo em C, trabalhando a inserção e visualização de dados, bem como operações matemáticas e comparação de valores. \n ");
+    printf("Trabalho de Super Trunfo em C, trabalhando com estruturas de decisao, menus interativos e operadores lógicos. \n ");
 
     //Declaração de variáveis da primeira e segunda carta:
     
@@ -62,7 +62,7 @@ int main () {
     printf("Digite a quantidade de pontos turísticos nesta cidade: ");
     scanf("%d", &ponto_tur1);
 
-// Calculo de densidade, PIB per capita e super poder da primeira carta.
+// Calculo de densidade e PIB per capita da primeira carta.
 
     denspop1 = (double)popul1 / areakm1;
     pibcpt1 = (pib1 * 1e9) / (double)popul1; //Aqui acontece a conversão de bilhões para reais.
@@ -104,7 +104,7 @@ int main () {
     printf("Digite a quantidade de pontos turísticos nesta cidade: ");
     scanf("%d", &ponto_tur2);
 
-// Aqui acontece o calculo da densidade, PIB per capita e super poder da segunda carta
+// Aqui acontece o calculo da densidade e PIB per capita da segunda carta
 
    denspop2 = (double)popul2 / areakm2;
    pibcpt2 = (pib2 * 1e9) / (double)popul2;
