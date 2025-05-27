@@ -1,26 +1,5 @@
 #include <stdio.h>
 
-void compara_valor (double a, double b) {           //Esta função compara os dois valores recebidos e imprime quem venceu (com exceção da densidade populacional).
-    if (a > b)
-    {
-       printf("A carta 1 venceu! %d \n", a>b);
-    }
-    else {
-        printf("A carta 2 venceu! %d \n", a>b);
-    }
-}
-
-void compara_denspop(double a, double b) {
-    if (a < b)
-    {
-        printf("A carta 1 venceu! %d \n", a<b);
-    }
-    else {
-        printf("A carta 2 venceu! %d \n", a<b);
-    }
-}
-
-    
 int main () {
     printf("Trabalho de Super Trunfo em C, trabalhando com estruturas de decisao, menus interativos e operadores lógicos. \n ");
 
@@ -119,7 +98,8 @@ int main () {
     printf("A densidade populacional da cidade é: %.2f hab/km². \n O PIB per Capita da cidade é: %.2f reais. \n", denspop2, pibcpt2);   
   
     int menu;
-    printf("Escolha um atributo a seguir para a comparação de cartas.");
+    do {
+    printf("Escolha um atributo a seguir para a comparação de cartas.\n");
     printf("1 - Comparar população.\n ");
     printf("2 - Comparar área. \n");
     printf("3 - Comparar PIB. \n");
@@ -127,41 +107,97 @@ int main () {
     printf("5 - Comparar densidade populacional.\n");
     printf("6 - Comparar PIB per capita.\n");
     printf("7 - Sair do programa.\n");
-    scanf("%i\n", &menu);
+    scanf("%i", &menu);
 
     switch (menu) {
         case 1:
-        compara_valor(popul1, popul2);
+        if (popul1>popul2)
+        {
+           printf("A carta 1 venceu com a maior população!\n");
+        }
+         else if (popul1<popul2)
+        {
+            printf("A carta 2 venceu com a maior população!\n");
+        }
+         else {
+            printf("Empate! As duas populações são iguais.\n");
+        }
+        
         break;
 
         case 2:
-        compara_valor(areakm1, areakm2);
+        if (areakm1>areakm2) {
+            printf("A carta 1 venceu com a maior área!\n");
+        }
+        else if (areakm1<areakm2) {
+            printf ("A carta 2 venceu com a maior área!\n");
+        }
+        else {
+            printf("Empate! As duas áreas são iguais.\n");
+        }
+        
         break;
 
         case 3:
-        compara_valor(pib1, pib2);
+        if (pib1>pib2) {
+            printf("A carta 1 venceu com maior PIB!\n");
+        }
+        else if (pib1<pib2) {
+            printf("A carta 2 venceu com maior PIB! \n");
+        }
+        else {
+            printf("Empate! As duas cartas possuem o mesmo PIB. \n");
+        }
+        
         break;
 
         case 4:
-        compara_valor(ponto_tur1, ponto_tur2);
+        if (ponto_tur1>ponto_tur2) {
+            printf("A carta 1 venceu com mais pontos turísticos!\n");
+        }
+        else if(ponto_tur1<ponto_tur2) {
+            printf("A carta 2 venceu com mais pontos turísticos!\n");
+        }
+        else {
+            printf("Empate! As duas cartas possuem a mesma quantidade de pontos turísticos.\n");
+        }
+        
         break;
 
         case 5:
-        compara_denspop(denspop1, denspop2);
+        if (denspop1<denspop2) {
+            printf("A carta 1 venceu com a menor densidade populacional!\n");
+        }
+        else if (denspop1>denspop2) {
+            printf("A carta 2 venceu com a menor densidade populacional!\n");
+        }
+        else {
+            printf("Empate! As duas cartas possuem a mesma densidade populacional");
+        }
+        
         break;
 
         case 6:
-        compara_valor(pibcpt1, pibcpt2);
+        if (pibcpt1>pibcpt2) {
+            printf("A carta 1 venceu com o maior PIB per capita!\n");
+        }
+        else if (pibcpt1<pibcpt2) {
+            printf("A carta 2 venceu com o maior PIB per capita!\n");
+        }
+        else {
+            printf("Empate! As duas cartas possuem o mesmo valor de PIB per capita!\n");
+        }
+         
+        
         break;
 
         case 7:
-        return 0;
+        printf("Saindo do programa.");
         break;
-
+        
         default:
         printf("Opção inválida, tente novamente.\n");
     }
+}while (menu !=7);
 
-
-
-}
+return 0;
